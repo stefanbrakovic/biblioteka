@@ -1,24 +1,21 @@
 package biblioteka;
 
+import java.util.LinkedList;
+import java.util.concurrent.LinkedBlockingDeque;
+
 public class Knjiga {
 	
 	private String naslov;
-	private String autori;
 	private String izdavac;
 	private long isbn;
 	private int izdanje;
+	private LinkedList<Autor> autori = new LinkedList<Autor>();
 	
 	public String getNaslov() {
 		return naslov;
 	}
 	public void setNaslov(String naslov) {
 		this.naslov = naslov;
-	}
-	public String getAutori() {
-		return autori;
-	}
-	public void setAutori(String autori) {
-		this.autori = autori;
 	}
 	public String getIzdavac() {
 		return izdavac;
