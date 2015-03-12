@@ -14,6 +14,15 @@ public class Knjiga {
 	public String getNaslov() {
 		return naslov;
 	}
+	
+	public LinkedList<Autor> getAutori() {
+		return autori;
+	}
+
+	public void setAutori(LinkedList<Autor> autori) {
+		this.autori = autori;
+	}
+
 	public void setNaslov(String naslov) {
 		this.naslov = naslov;
 	}
