@@ -11,10 +11,21 @@ public class Biblioteka implements BibliotekaInterfejs {
 	
 	
 	public void dodajKnjigu(Knjiga knjiga) {
-		knjige.add(knjiga);		
+		if (knjiga == null) {
+			throw new RuntimeException("Knjiga ne sme biti null");
+		}
+		if (knjige.contains(knjiga)) {
+			throw new RuntimeException("Vec je u bibiloteci");
+		}
+		knjige.add(knjiga);
+			
+		
 	}
 
 	public void obrisiKnjigu(Knjiga knjiga) {
+		if (!knjige.contains(knjiga)) {
+			throw new RuntimeException("nema je u biblioteci");
+		}
 		knjige.remove(knjiga);
 	}
 
@@ -23,8 +34,10 @@ public class Biblioteka implements BibliotekaInterfejs {
 		
 		LinkedList<Knjiga> rezultat = new LinkedList<Knjiga>();
 		
-		if (naslov == null && ISBN <= 0 && izdavac == null && autor==null) {
-			return knjige;
+
+		if (naslov == null && ISBN <=0 && izdavac == null && autor == null) {
+			throw new RuntimeException("morate uneti neki kriterijum");
+
 		}
 		
 		if (ISBN > 0) {
